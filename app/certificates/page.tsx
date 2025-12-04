@@ -13,6 +13,13 @@ export default function Certificates() {
     setBaseUrl(window.location.origin);
   }
 
+  // Helper function to properly encode PDF paths for URLs
+  const encodePdfPath = (path: string) => {
+    // Remove leading slash, split into segments, encode each segment, then rejoin
+    const segments = path.startsWith('/') ? path.slice(1).split('/') : path.split('/');
+    return '/' + segments.map(segment => encodeURIComponent(segment)).join('/');
+  };
+
   const certificates = [
     {
       title: "5.0 Professional Gen A.I. + Power BI + Excel",
@@ -196,7 +203,7 @@ export default function Certificates() {
                   {/* Actions */}
                   <div className="flex gap-3">
                     <a
-                      href={baseUrl ? `/api/view-pdf${cert.pdf}` : cert.pdf}
+                      href={`/api/view-pdf${encodePdfPath(cert.pdf)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 btn-primary text-center text-sm py-2 flex items-center justify-center gap-2"
