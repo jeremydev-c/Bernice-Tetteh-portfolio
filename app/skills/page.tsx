@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Database, BarChart3, Shield, Waves, Code, MapPin, Users, TrendingUp } from 'lucide-react';
+import { Database, BarChart3, Shield, Waves, Code, MapPin, Users, TrendingUp, Map } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import ScrollToTop from '../components/ScrollToTop';
 
@@ -18,6 +18,19 @@ export default function Skills() {
         { name: "Marine Data Analysis", level: "Expert" },
         { name: "CMEMS (Copernicus Marine Service)", level: "Advanced" },
         { name: "Oceanographic Data", level: "Advanced" },
+      ]
+    },
+    {
+      title: "GIS & Geospatial Analysis",
+      icon: Map,
+      color: "from-emerald-500 to-teal-600",
+      skills: [
+        { name: "QGIS", level: "Advanced" },
+        { name: "Geospatial Data Analysis", level: "Advanced" },
+        { name: "Spatial Data Visualization", level: "Advanced" },
+        { name: "Map Creation & Analysis", level: "Advanced" },
+        { name: "Vessel Tracking Visualization", level: "Expert" },
+        { name: "Marine Spatial Planning", level: "Advanced" },
       ]
     },
     {
@@ -40,7 +53,6 @@ export default function Skills() {
       color: "from-purple-500 to-pink-600",
       skills: [
         { name: "R Programming", level: "Intermediate" },
-        { name: "QGIS", level: "Advanced" },
         { name: "AI & Machine Learning", level: "Intermediate" },
         { name: "Generative AI", level: "Intermediate" },
         { name: "Data Analysis Tools", level: "Expert" },
@@ -164,7 +176,7 @@ export default function Skills() {
               through cutting-edge technology
             </p>
             <p className="text-base text-teal-400/80 max-w-2xl mx-auto">
-              Expert in 9 specialized domains • 10+ years of field experience • Industry-leading 
+              Expert in 10 specialized domains • 10+ years of field experience • Industry-leading 
               compliance systems • Monitoring 1000+ vessels across multiple countries
             </p>
           </motion.div>
@@ -214,4 +226,3 @@ export default function Skills() {
     </div>
   );
 }
-
